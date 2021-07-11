@@ -16,9 +16,4 @@ averageSecOnOneTask = sumAllId((closet_ts - assigned_ts)/quantityTasksPerId)/qua
 Получив среднее значение времени затраченного за один таск из всего множества можно поставить начальное значение как
 averageSecOnOneTask/30*N = standartAverageMonyPerTask за один таск.
 
-Мотивация требует денежных знаков и разная скорость выполнения заданий требует градации в оплате за скорость и качество выполнения микротасков.
-
-За медленное выполнение вплоть до стандартного времени оплата standartAverageMonyPerTask.
-Все задания выполнные быстрее но исключительно не медленнее чем averageSecOnOneTask. Оплата == standartAverageMonyPerTask  * 30%.
-
 
