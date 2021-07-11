@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class solution {
+public class solutionFirstTask {
     public static ArrayList<Task> arrayList = new ArrayList<>();
     public static File file = new File("C:\\Users\\valit\\progectManagerTestTask\\src\\main\\resources\\file.txt");
 
@@ -66,7 +66,7 @@ public class solution {
             Double generalAverageTimePerTask = sumAverageTimePerTask/arrayList.size();
             System.out.println(generalAverageTimePerTask);
             Double costOfOneMicrotask = generalAverageTimePerTask/30;
-            System.out.println("Cost of average task for cost of 30 sec = N" + "\t" +costOfOneMicrotask + " * N");
+            System.out.println("Cost of average task for cost of 30 sec = N" + "\tjj" +costOfOneMicrotask + " * N");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
