@@ -67,6 +67,7 @@ public class solutionFirstTask {
             System.out.println(generalAverageTimePerTask);
             Double costOfOneMicrotask = generalAverageTimePerTask/30;
             System.out.println("Cost of average task for cost of 30 sec = N" + "\t" +costOfOneMicrotask + " * N");
+            bufferedReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
