@@ -1,9 +1,17 @@
 import java.io.*;
+import java.net.URL;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.*;
 
 public class solutionFirstTask {
     public static ArrayList<Task> arrayList = new ArrayList<>();
-    public static File file = new File("C:\\Users\\valit\\progectManagerTestTask\\src\\main\\resources\\file.txt");
+    public static StringBuilder path = new StringBuilder((System.getProperty("user.dir") + "\\target\\classes" + "\\file.txt").replace("/", "\\"));
+    static {
+        System.out.println(path);
+    }
+    public static File file = new File(path.toString());
 
     public static class Task {
         Integer tid;
@@ -51,22 +59,15 @@ public class solutionFirstTask {
                 if(!inputStringLine[0].contains("0")) continue;
                 else arrayList.add(parseNextTaskAndGetNewTask(inputStringLine));
             }
-            if(arrayList.size() > 10 ) {
-                for (int i = 0; i < 10; i++) {
-                    System.out.println(arrayList.get(i).averageTimePerMicrotask);
-                    System.out.println(arrayList.get(i).assinged_ts.getTime());
-                    System.out.println(arrayList.get(i).closed_ts.getTime());
-                    System.out.println(arrayList.get(i).tid);
-                }
-            }
             Double sumAverageTimePerTask = new Double(0.0);
             for (Task task : arrayList) {
                 sumAverageTimePerTask += task.averageTimePerMicrotask;
             }
             Double generalAverageTimePerTask = sumAverageTimePerTask/arrayList.size();
-            System.out.println(generalAverageTimePerTask);
+            System.out.println("generalAverageTimePerTask = sumAverageTimePerTask/arrayList.size() = " + generalAverageTimePerTask);
             Double costOfOneMicrotask = generalAverageTimePerTask/30;
-            System.out.println("Cost of average task for cost of 30 sec = N" + "\t" +costOfOneMicrotask + " * N");
+            System.out.println("costOfOneMicrotask = generalAverageTimePerTask/30 = " + costOfOneMicrotask);
+            System.out.println("Response = " + "\t" +costOfOneMicrotask + " * N");
             bufferedReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
