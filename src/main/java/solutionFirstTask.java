@@ -8,9 +8,6 @@ import java.util.*;
 public class solutionFirstTask {
     public static ArrayList<Task> arrayList = new ArrayList<>();
     public static StringBuilder path = new StringBuilder((System.getProperty("user.dir") + "\\target\\classes" + "\\file.txt").replace("/", "\\"));
-    static {
-        System.out.println(path);
-    }
     public static File file = new File(path.toString());
 
     public static class Task {
